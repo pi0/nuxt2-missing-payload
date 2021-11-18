@@ -5,9 +5,8 @@ export default (nuxt) => {
       return await fetchPayload.call(this, route, prefetch)
     } catch (err) {
       console.error(`Error ${prefetch ? 'pre' : ''}fetching static payload: ` + err)
-      const path = window.location.pathname
-      if (!prefetch && !path.endsWith('#reload')) {
-        setTimeout(() => { window.location.replace(path + '#reload') }, 1000)
+      if (!prefetch && !window.location.pathname.endsWith('#reload')) {
+        setTimeout(() => { window.location.replace(window.location.pathname + '#reload') }, 1000)
       }
     }
   }
