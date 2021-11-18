@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt generate && rm ./dist/_nuxt/static/*/about/payload.js",
+    "dev": "nuxt dev",
+    "start": "nuxt start"
+  },
+  "devDependencies": {
+    "nuxt": "^2.15.8"
+  }
+}
